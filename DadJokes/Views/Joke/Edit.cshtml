@@ -1,0 +1,46 @@
+﻿@model DadJokes.Models.Joke
+<form method="post">
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <h2 class="text-info pl-3">Update the Joke</h2>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4 p-3">
+                        <label asp-for="Question"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Question" class="form-control" />
+                        <span asp-validation-for="Question" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4 p-3">
+                        <label asp-for="Answer"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Answer" class="form-control" />
+                        <span asp-validation-for="Answer" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class=" col">
+                            <input type="submit" class="btn btn-success w-100" value="Update" />
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" class="btn btn-primary w-100"><i class="fa-solid fa-right-from-bracket"></i>Back</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-4">
+                @*Keep this empty*@
+            </div>
+        </div>
+    </div>
+</form>
+
