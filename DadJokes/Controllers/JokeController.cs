@@ -44,6 +44,23 @@ namespace DadJokes.Controllers
             return View(obj);
         }
 
+        //GET - Search
+        public IActionResult ShowSearchForm()
+        {
+            return View();
+        }
+
+        
+        public IActionResult ShowSearchResult(string SearchPhrase)
+        {
+            var obj = _db.Joke.Where(j=>j.Question.Contains(SearchPhrase));
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View("Index",obj);
+        }
+
         //GET - Edit
         public IActionResult Edit(int id) {
             var obj = _db.Joke.Find(id);
